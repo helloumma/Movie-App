@@ -8,7 +8,7 @@ const options = [
 
 const Input = () => (
 	<>
-		<Select options={options} />
+		<Select options={options} isMulti />
 	</>
 );
 
