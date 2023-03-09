@@ -1,6 +1,11 @@
 import Select from "react-select";
 
-const options = [
+interface Data {
+	value: string;
+	label: string;
+}
+
+const options: Data[] = [
 	{ value: "chocolate", label: "Chocolate" },
 	{ value: "strawberry", label: "Strawberry" },
 	{ value: "vanilla", label: "Vanilla" },
