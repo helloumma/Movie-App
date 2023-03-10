@@ -8,68 +8,97 @@ import { useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
-// fetch data here [for now]
-
-//https://api.themoviedb.org/3/search/person?api_key=efc8c4ea4aebc0cb03eb170d78fa7cec&query=Jim+carey
-
-// [Hugh Grant, Jim Carrey] for example
-
-//https://api.themoviedb.org/3/discover/movie?api_key=efc8c4ea4aebc0cb03eb170d78fa7cec&language=en-US&sort_by=primary_release_date.desc&page=1&with_people=3291,206
-
-// first you need to get the id for the person searched and then you need to append that to the second api call
-
-// get the first actor and store the ID in state 
-
-// get the second actor and store the ID in state
-
-// use these in a useEffect for the second API repsonse 
-
-// install zod - to extract only the ID in the first response  (maybe)
-
-//move to types file after
-interface GetActorID {
-
+interface Person {
+  id: number;
 }
-interface MoviesData {
 
+interface MoreInfo {
+  person1Data: string;
+  person2Data: string;
+  results: {}[]; // redo this
+  title: string;
+  overview: string;
+  popularity: number;
+  poster_path: string;
+  id: string;
 }
 
 export default function Home() {
+  const [id1, setId1] = useState<string>("");
+  const [id2, setId2] = useState<string>("");
+  const [moreInfo, setMoreInfo] = useState<MoreInfo>();
 
-  const [person, setPerson] = useState<string>() //but this really needs to be an array - you might need a ref 
+  const handleSearch = async (): Promise<MoreInfo> => {
+    const [person1Data, person2Data] = await Promise.all([
+      fetchID(id1),
+      fetchID(id2),
+    ]);
 
-  //useEffect to do setPerson and the signature should really be using the interface GetActorID 
-  const fetchID = async(person:string) => {
-    const data = await fetch(`https://api.themoviedb.org/3/search/person?api_key=${ENV.api_key}&query=${person}
-    `).then((res) => res.json())
+    const data = await fetch(
+      `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TEST_TOKEN}&language=en-US&sort_by=primary_release_date.desc&page=1&with_people=${person1Data},${person2Data}`
+    ).then((res) => res.json());
+    setMoreInfo(data);
+    console.log(data);
+    return data;
+  };
 
-    return data
-  }
+  const fetchID = async (id: number): Promise<Person> => {
+    const data =
+      await fetch(`https://api.themoviedb.org/3/search/person?api_key=${process.env.TEST_TOKEN}&query=${id}
+  `).then((res) => res.json());
+    return data.results[0].id;
+  };
 
-  // reminder: you might be able to chain the api responses 
+  // extract out the date
+  // make the input one component
+  // look into react-query to handle the data side of things - to separate concerns and make it look tidy
+  // make the result into another component
+  // add chakra ui
+  // create cards on result with a chevron to expand to view more details
+  // fix types/interfaces - go back over notes and add in generics (things like id are shared)
+  // change variable names (tidy it up)
+  // zod (?!)
+  // add vitest and do some snapshot testing (add coverage too)
+  // create a simple read me
+  // more time: add in react-select
+  // more time: errror handling (ie no numbers in inputs and if there are no results show a message, 500/400 error response on api)
 
-  const fetchMovies = async(personOne:string, personTwo:string) => {
-    const data = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${ENV.api_key}&language=en-US&sort_by=primary_release_date.desc&page=1&with_people=${personOne},${personTwo}`)
-    .then((res) => res.json())
-
-    return data
-  }
-
-
-	return (
-		<>
-			<Head>
-				<title>Movies app</title>
-				<meta
-					name="description"
-					content="Search for two actors who have been in the same movie."
-				/>
-				<meta name="viewport" content="width=device-width, initial-scale=1" />
-				<link rel="icon" href="/favicon.ico" />
-			</Head>
-			<>
-				<Input />
-			</>
-		</>
-	);
+  return (
+    <>
+      <div>
+        <label htmlFor="id1">ID 1:</label>
+        <input
+          type="text"
+          id="id1"
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            setId1(e.target.value)
+          }
+        />
+      </div>
+      <div>
+        <label htmlFor="id2">ID 2:</label>
+        <input
+          type="text"
+          id="id2"
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            setId2(e.target.value)
+          }
+        />
+      </div>
+      <button onClick={handleSearch}>Search</button>
+      {/*fix types here age*/}
+      {moreInfo?.results?.map((a) => (
+        <div key={a.id}>
+          <p>{a.title}</p>
+          <p>{a.overview}</p>
+          <p>{Array(Math.round(a.popularity)).fill("⭐")}</p>
+          <p>
+            make this into an nextjs Image:
+            <img src={`http://image.tmdb.org/t/p/w500/${a.poster_path}`} />
+          </p>
+          <p>extract out the date:{a.release_date}</p>
+        </div>
+      ))}
+    </>
+  );
 }
