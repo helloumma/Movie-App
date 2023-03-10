@@ -14,6 +14,7 @@ const options: Data[] = [
 const Input = () => (
 	<>
 		<Select options={options} isMulti />
+		{options?.map((a) => a.value)}
 	</>
 );
 
