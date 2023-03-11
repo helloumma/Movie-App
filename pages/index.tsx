@@ -63,17 +63,20 @@ export default function Home() {
   // fix types/interfaces - go back over notes and add in generics (things like id are shared)
   // change variable names (tidy it up)
   // zod (?!)
-  // more time: add in react-select
   // more time: errror handling on the inputs
-  // mmore time: pagination for more than 6 results etc.
-  // more time: allow user to click on image to pop up in a modal to view larger view
   return (
     <main className={inter.className}>
       <h1 className="page-title">
         Name Two Actors/Actresses Who Starred in...
       </h1>
       <hr />
-      <Input handleSearch={handleSearch} idOne={idOne} idTwo={idTwo} />
+      <Input
+        handleSearch={handleSearch}
+        idOne={idOne}
+        idTwo={idTwo}
+        ErrorOne={id1.length < 1 && "error"}
+        ErrorTwo={id2.length < 1 && "error"}
+      />
       <Result moreInfo={moreInfo} />
     </main>
   );
