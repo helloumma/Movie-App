@@ -27,6 +27,7 @@ body {
   border: none;
   color: white;
   font-size: 20px;
+  margin-left: 90%;
 }
 
 .show {
@@ -58,4 +59,16 @@ input {
   background: white;
   padding: 10px;
   border-radius: 2px;
+}
+
+.stars-wrap {
+  word-break: break-all;
+}
+
+.result-image {
+  width: 30%;
+}
+
+.result-info {
+  width: 70%;
 }

@@ -69,12 +69,12 @@ export default function Home() {
   // more time: errror handling on the inputs
   // mmore time: pagination for more than 6 results etc.
   return (
-    <>
+    <main className={inter.className}>
       <h1>Name Two Actors/Actresses Who Starred in...</h1>
       <hr />
       <Input handleSearch={handleSearch} idOne={idOne} idTwo={idTwo} />
-      <h2>Results</h2>
+
       <Result moreInfo={moreInfo} />
-    </>
+    </main>
   );
 }
