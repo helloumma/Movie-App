@@ -18,6 +18,10 @@ This small application allows users to input two actor/actresses names, and view
 ### 🔧How to Run the App
 
 ```bash
+npm i
+```
+
+```bash
 npm run dev
 # or
 yarn dev
