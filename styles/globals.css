@@ -1,0 +1,16 @@
+html,
+body {
+  background: #dedad9;
+}
+
+.results {
+  display: flex;
+}
+
+.show {
+  transform: rotate(0deg);
+}
+
+.hide {
+  transform: rotate(180deg);
+}

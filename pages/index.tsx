@@ -57,6 +57,7 @@ export default function Home() {
     setId2(e.target.value);
   };
 
+  // reminder: semantic HTML
   // move the data side of things into api folder (do some reading)
   // make the result into another component
   // add chakra ui
@@ -70,7 +71,10 @@ export default function Home() {
   // more time: errror handling on the inputs
   return (
     <>
+      <h1>Name Two Actor/Actresses Who Starred in...</h1>
+      <hr />
       <Input handleSearch={handleSearch} idOne={idOne} idTwo={idTwo} />
+      <h2>Results</h2>
       <Result moreInfo={moreInfo} />
     </>
   );

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useState } from "react";
 
 interface MoreInfo {
   person1Data: string;
@@ -13,25 +14,37 @@ interface MoreInfo {
 
 // to do: more type fixing
 const Result = (props: { moreInfo: any }) => {
-  console.log(props.moreInfo);
+  const [show, setShow] = useState<boolean>(false);
+
   return (
-    <>
+    <main>
       {props.moreInfo?.results < 1 && <p>No Films Found</p>}
-      {props.moreInfo?.results?.map((a: any) => (
-        <div key={a.id}>
-          <p>{a.title}</p>
-          <Image
-            src={`http://image.tmdb.org/t/p/w500${a.poster_path}`}
-            alt="text"
-            width={400}
-            height={600}
-          />
-          <p>{new Date(a.release_date).getFullYear()}</p>
-          <p>Rating: {Array(Math.round(a.popularity)).fill("⭐")}</p>
-          <p>{a.overview}</p>
-        </div>
+      {props.moreInfo?.results?.map((film: any) => (
+        <section key={film.id} className="results">
+          <div>
+            <Image
+              src={`http://image.tmdb.org/t/p/w500${film.poster_path}`}
+              alt={film.title}
+              width={150}
+              height={230}
+            />
+          </div>
+          <div>
+            <p>
+              {film.title} ({new Date(film.release_date).getFullYear()})
+            </p>
+            <p>{Array(Math.round(film.popularity)).fill("⭐")}</p>
+            <button
+              className={show ? "hide" : "show"}
+              onClick={() => (show ? setShow(false) : setShow(true))}
+            >
+              v
+            </button>
+            {show && <p>{film.overview}</p>}
+          </div>
+        </section>
       ))}
-    </>
+    </main>
   );
 };
 
