@@ -90,18 +90,15 @@ export default function Home() {
       {moreInfo?.results?.map((a) => (
         <div key={a.id}>
           <p>{a.title}</p>
-          <p>{a.overview}</p>
+          <Image
+            src={`http://image.tmdb.org/t/p/w500${a.poster_path}`}
+            alt="text"
+            width={400}
+            height={600}
+          />
+          <p>{new Date(a.release_date).getFullYear()}</p>
           <p>Rating: {Array(Math.round(a.popularity)).fill("⭐")}</p>
-          <p>
-            make this into an nextjs Image:
-            <Image
-              src={`http://image.tmdb.org/t/p/w500${a.poster_path}`}
-              alt="text"
-              width={400}
-              height={600}
-            />
-          </p>
-          <p>extract out the date:{a.release_date}</p>
+          <p>{a.overview}</p>
         </div>
       ))}
     </>
