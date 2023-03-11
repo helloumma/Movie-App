@@ -29,6 +29,12 @@ yarn dev
 pnpm dev
 ```
 
+```bash
+npx vitest
+
+npx vitest --coverage
+```
+
 ### 💭Future Improvements
 
 - Improve the responsive design
