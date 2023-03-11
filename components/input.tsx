@@ -1,4 +1,10 @@
-const Input = (props: { handleSearch: any; idOne: any; idTwo: any }) => {
+import { ChangeEventHandler, MouseEventHandler } from "react";
+
+const Input = (props: {
+  handleSearch: MouseEventHandler<HTMLButtonElement>;
+  idOne: ChangeEventHandler<HTMLInputElement>;
+  idTwo: ChangeEventHandler<HTMLInputElement>;
+}) => {
   return (
     <main className="input-section">
       <section className="form-section">

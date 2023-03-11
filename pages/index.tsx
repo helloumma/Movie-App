@@ -13,10 +13,12 @@ interface Person {
   id: number;
 }
 
+type data = {};
+
 interface MoreInfo {
   person1Data: string;
   person2Data: string;
-  results: {}[]; // redo this
+  results: Array<data>;
   title: string;
   overview: string;
   popularity: number;

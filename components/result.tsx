@@ -1,10 +1,12 @@
 import Image from "next/image";
 import { useState } from "react";
 
+type data = {};
+
 interface MoreInfo {
   person1Data: string;
   person2Data: string;
-  results: {}[]; // redo this
+  results: Array<data>;
   title: string;
   overview: string;
   popularity: number;
@@ -13,9 +15,8 @@ interface MoreInfo {
 }
 
 // to do: more type fixing
-const Result = (props: { moreInfo: any }) => {
-  const [show, setShow] = useState<boolean>(false);
-  const [showIndex, setShowIndex] = useState(-1);
+const Result = (props: { moreInfo: Array<MoreInfo> }) => {
+  const [showIndex, setShowIndex] = useState<number>(-1);
 
   return (
     <>
@@ -35,7 +36,6 @@ const Result = (props: { moreInfo: any }) => {
               <h3>
                 {film.title} ({new Date(film.release_date).getFullYear()})
               </h3>
-
               <div>
                 <p className="stars-wrap">
                   Rating:{Array(Math.round(film.popularity)).fill("⭐")} (
