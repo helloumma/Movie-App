@@ -1,7 +1,7 @@
 html,
 body {
-  background: #e9ecf4;
-  color: #3a57b8;
+  background: #f5dada;
+  color: #282828;
 }
 
 .results-main {
@@ -17,11 +17,11 @@ body {
   display: flex;
   flex-wrap: wrap;
   width: 45%;
-  background: #0200afde;
+  background: #7ab351de;
   border-radius: 2px;
   padding: 10px;
   margin: 10px;
-  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+  box-shadow: 0.5rem 0.5rem black;
   color: #fff;
 }
 
@@ -50,7 +50,7 @@ img {
 
 .submit-button {
   border: none;
-  background: #0200afde;
+  background: #313132;
   padding: 10px;
   border-radius: 2px;
   color: white;
@@ -66,7 +66,7 @@ input {
   padding: 10px;
   border-radius: 2px;
   margin-right: 10px;
-  color: #3a57b8;
+  color: #313132;
 }
 
 textarea:focus,
@@ -97,7 +97,7 @@ hr {
   background-image: linear-gradient(
     to right,
     rgba(0, 0, 0, 0),
-    rgb(58 87 184),
+    rgb(247 53 127),
     rgba(0, 0, 0, 0)
   );
 }

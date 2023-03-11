@@ -61,7 +61,6 @@ export default function Home() {
   // fix types/interfaces - go back over notes and add in generics (things like id are shared)
   // change variable names (tidy it up)
   // zod (?!)
-  // create a simple read me
   // more time: add in react-select
   // more time: errror handling on the inputs
   // mmore time: pagination for more than 6 results etc.
@@ -73,7 +72,6 @@ export default function Home() {
       </h1>
       <hr />
       <Input handleSearch={handleSearch} idOne={idOne} idTwo={idTwo} />
-
       <Result moreInfo={moreInfo} />
     </main>
   );
