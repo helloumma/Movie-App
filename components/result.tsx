@@ -17,9 +17,9 @@ const Result = (props: { moreInfo: any }) => {
   const [show, setShow] = useState<boolean>(false);
 
   return (
-    <main>
+    <main className="results-main">
       {props.moreInfo?.results < 1 && <p>No Films Found</p>}
-      {props.moreInfo?.results?.map((film: any) => (
+      {props.moreInfo?.results?.map((film: any, index: any) => (
         <section key={film.id} className="results">
           <div>
             <Image
@@ -30,16 +30,24 @@ const Result = (props: { moreInfo: any }) => {
             />
           </div>
           <div>
-            <p>
+            <h3>
               {film.title} ({new Date(film.release_date).getFullYear()})
-            </p>
-            <p>{Array(Math.round(film.popularity)).fill("⭐")}</p>
-            <button
-              className={show ? "hide" : "show"}
-              onClick={() => (show ? setShow(false) : setShow(true))}
-            >
-              v
-            </button>
+            </h3>
+
+            <div>
+              <p>
+                Rating:{Array(Math.round(film.popularity)).fill("⭐")} (
+                {film.popularity})
+              </p>
+              <button
+                className={show ? "hide" : "show"}
+                key={index}
+                onClick={() => (show ? setShow(false) : setShow(true))}
+              >
+                v
+              </button>
+            </div>
+            {/* to do: only show more for the one clicked within the map - use an index to track */}
             {show && <p>{film.overview}</p>}
           </div>
         </section>

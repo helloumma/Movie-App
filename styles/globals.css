@@ -1,10 +1,32 @@
 html,
 body {
-  background: #dedad9;
+  background: #f0f0f0;
 }
 
+.results-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 .results {
   display: flex;
+  flex-wrap: wrap;
+  width: 45%;
+  background: #146c53de;
+  border-radius: 2px;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+  color: #fff;
+}
+
+.show,
+.hide {
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
 }
 
 .show {
@@ -13,4 +35,27 @@ body {
 
 .hide {
   transform: rotate(180deg);
+}
+
+img {
+  border-radius: 2px;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+
+.submit-button {
+  border: none;
+  background: #146c53de;
+  padding: 15px 30px;
+  border-radius: 2px;
+  color: white;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+input {
+  border: none;
+  background: white;
+  padding: 10px;
+  border-radius: 2px;
 }

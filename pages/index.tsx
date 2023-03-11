@@ -60,8 +60,6 @@ export default function Home() {
   // reminder: semantic HTML
   // move the data side of things into api folder (do some reading)
   // make the result into another component
-  // add chakra ui
-  // create cards on result with a chevron to expand to view more details
   // fix types/interfaces - go back over notes and add in generics (things like id are shared)
   // change variable names (tidy it up)
   // zod (?!)
@@ -69,9 +67,10 @@ export default function Home() {
   // create a simple read me
   // more time: add in react-select
   // more time: errror handling on the inputs
+  // mmore time: pagination for more than 6 results etc.
   return (
     <>
-      <h1>Name Two Actor/Actresses Who Starred in...</h1>
+      <h1>Name Two Actors/Actresses Who Starred in...</h1>
       <hr />
       <Input handleSearch={handleSearch} idOne={idOne} idTwo={idTwo} />
       <h2>Results</h2>
