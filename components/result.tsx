@@ -18,7 +18,6 @@ const Result = (props: { moreInfo: any }) => {
 
   return (
     <>
-      <h2>Results</h2>
       <main className="results-main">
         {props.moreInfo?.results < 1 && <h2>No Films Found</h2>}
         {props.moreInfo?.results?.map((film: any, index: any) => (

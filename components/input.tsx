@@ -1,6 +1,6 @@
 const Input = (props: { handleSearch: any; idOne: any; idTwo: any }) => {
   return (
-    <main>
+    <main className="input-section">
       <section>
         <label htmlFor="actorActressOne">Actor/Actress One:</label>
         <input type="text" id="actorActressOne" onChange={props.idOne} />

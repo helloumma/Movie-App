@@ -68,9 +68,12 @@ export default function Home() {
   // more time: add in react-select
   // more time: errror handling on the inputs
   // mmore time: pagination for more than 6 results etc.
+  // more time: allow user to click on image to pop up in a modal to view larger view
   return (
     <main className={inter.className}>
-      <h1>Name Two Actors/Actresses Who Starred in...</h1>
+      <h1 className="page-title">
+        Name Two Actors/Actresses Who Starred in...
+      </h1>
       <hr />
       <Input handleSearch={handleSearch} idOne={idOne} idTwo={idTwo} />
 
