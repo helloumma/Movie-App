@@ -15,6 +15,7 @@ interface MoreInfo {
 // to do: more type fixing
 const Result = (props: { moreInfo: any }) => {
   const [show, setShow] = useState<boolean>(false);
+  const [showIndex, setShowIndex] = useState(-1);
 
   return (
     <>
@@ -41,20 +42,21 @@ const Result = (props: { moreInfo: any }) => {
                   {film.popularity.toFixed(2)})
                 </p>
               </div>
-              {/* to do: only show more for the one clicked within the map - use an index to track */}
-              {/*don't show the button for text less than 250 characters*/}
-              {show ? (
+              {showIndex === index ? (
                 <p>{film.overview}</p>
               ) : (
-                `${film.overview.substring(0, 250)}...`
+                <p>{`${film.overview.substring(0, 250)}...`}</p>
               )}
-              <button
-                className={show ? "hide" : "show"}
-                key={index}
-                onClick={() => (show ? setShow(false) : setShow(true))}
-              >
-                v
-              </button>
+              {film.overview.length > 250 && (
+                <button
+                  className={showIndex === index ? "hide" : "show"}
+                  onClick={() =>
+                    showIndex === index ? setShowIndex(-1) : setShowIndex(index)
+                  }
+                >
+                  V
+                </button>
+              )}
             </div>
           </section>
         ))}
