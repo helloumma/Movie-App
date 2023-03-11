@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 
 import Input from "../components/input";
+import Result from "../components/result";
 import { useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -48,8 +49,14 @@ export default function Home() {
     return data.results[0].id;
   };
 
-  // extract out the date
-  // make the input one component
+  const idOne = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setId1(e.target.value);
+  };
+
+  const idTwo = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setId2(e.target.value);
+  };
+
   // move the data side of things into api folder (do some reading)
   // make the result into another component
   // add chakra ui
@@ -61,46 +68,10 @@ export default function Home() {
   // create a simple read me
   // more time: add in react-select
   // more time: errror handling on the inputs
-
   return (
     <>
-      <div>
-        <label htmlFor="id1">ID 1:</label>
-        <input
-          type="text"
-          id="id1"
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-            setId1(e.target.value)
-          }
-        />
-      </div>
-      <div>
-        <label htmlFor="id2">ID 2:</label>
-        <input
-          type="text"
-          id="id2"
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-            setId2(e.target.value)
-          }
-        />
-      </div>
-      <button onClick={handleSearch}>Search</button>
-      {/*fix types here age*/}
-      {moreInfo?.results < 1 && <p>No Films Found</p>}
-      {moreInfo?.results?.map((a) => (
-        <div key={a.id}>
-          <p>{a.title}</p>
-          <Image
-            src={`http://image.tmdb.org/t/p/w500${a.poster_path}`}
-            alt="text"
-            width={400}
-            height={600}
-          />
-          <p>{new Date(a.release_date).getFullYear()}</p>
-          <p>Rating: {Array(Math.round(a.popularity)).fill("⭐")}</p>
-          <p>{a.overview}</p>
-        </div>
-      ))}
+      <Input handleSearch={handleSearch} idOne={idOne} idTwo={idTwo} />
+      <Result moreInfo={moreInfo} />
     </>
   );
 }
