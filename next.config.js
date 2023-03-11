@@ -4,6 +4,9 @@ const nextConfig = {
   env: {
     TEST_TOKEN: process.env.TEST_TOKEN,
   },
-}
+  images: {
+    domains: ["image.tmdb.org"],
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

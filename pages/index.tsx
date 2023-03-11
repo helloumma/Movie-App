@@ -38,7 +38,6 @@ export default function Home() {
       `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TEST_TOKEN}&language=en-US&sort_by=primary_release_date.desc&page=1&with_people=${person1Data},${person2Data}`
     ).then((res) => res.json());
     setMoreInfo(data);
-    console.log(data);
     return data;
   };
 
@@ -51,7 +50,7 @@ export default function Home() {
 
   // extract out the date
   // make the input one component
-  // look into react-query to handle the data side of things - to separate concerns and make it look tidy
+  // move the data side of things into api folder (do some reading)
   // make the result into another component
   // add chakra ui
   // create cards on result with a chevron to expand to view more details
@@ -61,7 +60,7 @@ export default function Home() {
   // add vitest and do some snapshot testing (add coverage too)
   // create a simple read me
   // more time: add in react-select
-  // more time: errror handling (ie no numbers in inputs and if there are no results show a message, 500/400 error response on api)
+  // more time: errror handling on the inputs
 
   return (
     <>
@@ -87,14 +86,20 @@ export default function Home() {
       </div>
       <button onClick={handleSearch}>Search</button>
       {/*fix types here age*/}
+      {moreInfo?.results < 1 && <p>No Films Found</p>}
       {moreInfo?.results?.map((a) => (
         <div key={a.id}>
           <p>{a.title}</p>
           <p>{a.overview}</p>
-          <p>{Array(Math.round(a.popularity)).fill("⭐")}</p>
+          <p>Rating: {Array(Math.round(a.popularity)).fill("⭐")}</p>
           <p>
             make this into an nextjs Image:
-            <img src={`http://image.tmdb.org/t/p/w500/${a.poster_path}`} />
+            <Image
+              src={`http://image.tmdb.org/t/p/w500${a.poster_path}`}
+              alt="text"
+              width={400}
+              height={600}
+            />
           </p>
           <p>extract out the date:{a.release_date}</p>
         </div>
