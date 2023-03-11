@@ -13,7 +13,7 @@ This small application allows users to input two actor/actresses names, and view
 - React
 - TypeScript
 - NextJS
-- Vitest-library
+- Vitest
 
 ### 🔧How to Run the App
 
