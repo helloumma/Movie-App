@@ -57,13 +57,10 @@ export default function Home() {
     setId2(e.target.value);
   };
 
-  // reminder: semantic HTML
   // move the data side of things into api folder (do some reading)
-  // make the result into another component
   // fix types/interfaces - go back over notes and add in generics (things like id are shared)
   // change variable names (tidy it up)
   // zod (?!)
-  // add vitest and do some snapshot testing (add coverage too)
   // create a simple read me
   // more time: add in react-select
   // more time: errror handling on the inputs

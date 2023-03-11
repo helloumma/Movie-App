@@ -1,7 +1,7 @@
 const Input = (props: { handleSearch: any; idOne: any; idTwo: any }) => {
   return (
     <main className="input-section">
-      <section>
+      <section className="form-section">
         <label htmlFor="actorActressOne">Actor/Actress One:</label>
         <input type="text" id="actorActressOne" onChange={props.idOne} />
         <label htmlFor="actorActressTwo">Actor/Actress Two:</label>

@@ -1,6 +1,7 @@
 html,
 body {
-  background: #f0f0f0;
+  background: #e9ecf4;
+  color: #3a57b8;
 }
 
 .results-main {
@@ -56,6 +57,7 @@ img {
   text-decoration: underline;
   cursor: pointer;
   margin-left: 10px;
+  margin-top: 10px;
 }
 
 input {
@@ -64,6 +66,7 @@ input {
   padding: 10px;
   border-radius: 2px;
   margin-right: 10px;
+  color: #3a57b8;
 }
 
 textarea:focus,
@@ -86,4 +89,19 @@ input:focus {
 .input-section {
   display: flex;
   justify-content: center;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgb(58 87 184),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.form-section {
+  margin-top: 10px;
 }
