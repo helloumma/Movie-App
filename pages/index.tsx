@@ -1,11 +1,8 @@
 import Head from "next/head";
-import { Inter } from "next/font/google";
 import Input from "../components/input";
 import Result from "../components/result";
 import { useState } from "react";
 import { Person, MoreInfo } from "../types/types";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const [personOne, setpersonOne] = useState<string | number>("");
@@ -52,7 +49,7 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={inter.className}>
+      <main>
         <h1 className="page-title">
           Name Two Actors/Actresses Who Starred in...
         </h1>
