@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { useState } from "react";
-
-import { Person, data, MoreInfo } from "../types/types";
+import { MoreInfo } from "../types/types";
 
 const Result = (props: { moreInfo: Array<MoreInfo> } | any) => {
   const [showIndex, setShowIndex] = useState<number>(-1);

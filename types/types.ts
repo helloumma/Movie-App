@@ -2,8 +2,6 @@ interface data {}
 
 export interface MoreInfo {
   release_date: string | number | Date;
-  person1Data: string;
-  person2Data: string;
   results: Array<data>;
   title: string;
   overview: string;
