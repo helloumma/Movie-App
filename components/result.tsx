@@ -1,9 +1,10 @@
 import Image from "next/image";
 import { useState } from "react";
 
-type data = {};
+interface data {}
 
 interface MoreInfo {
+  release_date: string | number | Date;
   person1Data: string;
   person2Data: string;
   results: Array<data>;
@@ -14,15 +15,13 @@ interface MoreInfo {
   id: string;
 }
 
-// to do: more type fixing
-const Result = (props: { moreInfo: Array<MoreInfo> }) => {
+const Result = (props: { moreInfo: Array<MoreInfo> } | any) => {
   const [showIndex, setShowIndex] = useState<number>(-1);
-
   return (
     <>
       <main className="results-main">
         {props.moreInfo?.results < 1 && <h2>No Films Found</h2>}
-        {props.moreInfo?.results?.map((film: any, index: any) => (
+        {props.moreInfo?.results?.map((film: MoreInfo, index: number) => (
           <section key={film.id} className="results">
             <div className="result-image">
               <Image

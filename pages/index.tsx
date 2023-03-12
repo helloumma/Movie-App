@@ -56,7 +56,6 @@ export default function Home() {
     setId2(e.target.value);
   };
 
-  // add formik for some small error handling
   // try to fix the issues with the types on everything
   // pull types into its own file and export - remember you can remove duplicates quite easily
   // add zod (the issue with the id type needs to parsed as a string)
