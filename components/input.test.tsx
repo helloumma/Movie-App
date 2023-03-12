@@ -4,7 +4,13 @@ import Input from "./input";
 
 it("renders correctly", () => {
   const result = render(
-    <Input handleSearch={() => null} idOne={() => null} idTwo={() => null} />
+    <Input
+      handleSearch={() => null}
+      idOne={() => null}
+      idTwo={() => null}
+      ErrorOne=""
+      ErrorTwo=""
+    />
   );
   expect(result).toMatchSnapshot();
 });
