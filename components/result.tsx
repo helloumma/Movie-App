@@ -22,12 +22,11 @@ const Result = (props: { moreInfo: Array<MoreInfo> } | any) => {
               <h3>
                 {film.title} ({new Date(film.release_date).getFullYear()})
               </h3>
-              <div>
-                <p className="stars-wrap">
-                  Rating:{Array(Math.round(film.popularity)).fill("⭐")} (
-                  {film.popularity.toFixed(2)})
-                </p>
-              </div>
+              <p className="stars-wrap">
+                Rating:{Array(Math.round(film.popularity)).fill("⭐")} (
+                {film.popularity.toFixed(2)})
+              </p>
+
               {showIndex === index ? (
                 <p>{film.overview}</p>
               ) : (
