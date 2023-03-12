@@ -16,6 +16,7 @@ const Result = (props: { moreInfo: Array<MoreInfo> } | any) => {
                 alt={film.title}
                 width={150}
                 height={230}
+                className="film-img"
               />
             </div>
             <div className="result-info">
@@ -39,7 +40,13 @@ const Result = (props: { moreInfo: Array<MoreInfo> } | any) => {
                     showIndex === index ? setShowIndex(-1) : setShowIndex(index)
                   }
                 >
-                  V
+                  <Image
+                    priority
+                    src="/chevron.svg"
+                    height={32}
+                    width={32}
+                    alt="chevron"
+                  />
                 </button>
               )}
             </div>

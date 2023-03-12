@@ -37,8 +37,6 @@ export default function Home() {
     setpersonTwo(e.target.value);
   };
 
-  // fix the tests
-
   return (
     <>
       <Head>
