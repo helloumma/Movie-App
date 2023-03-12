@@ -3,25 +3,9 @@ import { Inter } from "next/font/google";
 import Input from "../components/input";
 import Result from "../components/result";
 import { useState } from "react";
+import { Person, MoreInfo } from "../types/types";
 
 const inter = Inter({ subsets: ["latin"] });
-
-interface Person {
-  id: number;
-}
-
-type data = {};
-
-interface MoreInfo {
-  person1Data: string;
-  person2Data: string;
-  results: Array<data>;
-  title: string;
-  overview: string;
-  popularity: number;
-  poster_path: string;
-  id: string;
-}
 
 export default function Home() {
   const [id1, setId1] = useState<string>("");
