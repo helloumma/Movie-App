@@ -56,10 +56,12 @@ export default function Home() {
     setId2(e.target.value);
   };
 
-  // maybe: react-query (to tidy up)
-  // fix types/interfaces - go back over notes and add in generics (things like id are shared)
-  // change variable names (tidy it up)
-  // zod (?!)
+  // add formik for some small error handling
+  // try to fix the issues with the types on everything
+  // pull types into its own file and export - remember you can remove duplicates quite easily
+  // add zod (the issue with the id type needs to parsed as a string)
+  // change the variable names to make it easier to read
+  // fix the tests
 
   return (
     <>
@@ -80,8 +82,8 @@ export default function Home() {
           handleSearch={handleSearch}
           idOne={idOne}
           idTwo={idTwo}
-          ErrorOne={id1.length < 1 && "error"}
-          ErrorTwo={id2.length < 1 && "error"}
+          ErrorOne={id1 ? "" : "error"}
+          ErrorTwo={id2 ? "" : "error"}
         />
         <Result moreInfo={moreInfo} />
       </main>
