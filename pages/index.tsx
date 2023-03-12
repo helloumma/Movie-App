@@ -1,8 +1,5 @@
 import Head from "next/head";
-import Image from "next/image";
 import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
-
 import Input from "../components/input";
 import Result from "../components/result";
 import { useState } from "react";
@@ -59,25 +56,35 @@ export default function Home() {
     setId2(e.target.value);
   };
 
-  // move the data side of things into api folder (do some reading)
+  // maybe: react-query (to tidy up)
   // fix types/interfaces - go back over notes and add in generics (things like id are shared)
   // change variable names (tidy it up)
   // zod (?!)
-  // more time: errror handling on the inputs
+
   return (
-    <main className={inter.className}>
-      <h1 className="page-title">
-        Name Two Actors/Actresses Who Starred in...
-      </h1>
-      <hr />
-      <Input
-        handleSearch={handleSearch}
-        idOne={idOne}
-        idTwo={idTwo}
-        ErrorOne={id1.length < 1 && "error"}
-        ErrorTwo={id2.length < 1 && "error"}
-      />
-      <Result moreInfo={moreInfo} />
-    </main>
+    <>
+      <Head>
+        <title>Movie App</title>
+        <meta
+          name="description"
+          content="View two actors/actresses who have been in the same film."
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <main className={inter.className}>
+        <h1 className="page-title">
+          Name Two Actors/Actresses Who Starred in...
+        </h1>
+        <hr />
+        <Input
+          handleSearch={handleSearch}
+          idOne={idOne}
+          idTwo={idTwo}
+          ErrorOne={id1.length < 1 && "error"}
+          ErrorTwo={id2.length < 1 && "error"}
+        />
+        <Result moreInfo={moreInfo} />
+      </main>
+    </>
   );
 }

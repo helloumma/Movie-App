@@ -40,3 +40,4 @@ npx vitest --coverage
 - Improve the responsive design
 - Program pagination to view a limited amount of results on each page
 - React-select/auto-complete on inputs
+- Error handling
