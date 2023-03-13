@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Person, MoreInfo } from "../types/types";
 
 export default function Home() {
-  const [personOne, setpersonOne] = useState<string | number>("");
+  const [personOne, setpersonOne] = useState<string>("");
   const [personTwo, setpersonTwo] = useState<string>("");
   const [moreInfo, setMoreInfo] = useState<MoreInfo>();
 
