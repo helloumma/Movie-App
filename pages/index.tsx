@@ -19,7 +19,6 @@ export default function Home() {
       `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TEST_TOKEN}&language=en-US&sort_by=primary_release_date.desc&page=1&with_people=${IdOne},${IdTwo}`
     ).then((res) => res.json());
     setMoreInfo(data);
-    console.log(data);
     return data;
   };
 
