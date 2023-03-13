@@ -7,6 +7,7 @@ This small application allows users to input two actor/actresses names, and view
 - Allow the user to view results from inputs
 - Show "no films" if user inputs two values that don't bring back any results
 - User should be able to see the title, rating, summary and image of each film
+- Basic implementation of error handling on inputs
 
 ### 👩‍💻Technical Details
 
