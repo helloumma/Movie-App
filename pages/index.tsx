@@ -24,7 +24,7 @@ export default function Home() {
   };
 
   // fetch IDs of user inputs
-  const fetchID = async (id: number): Promise<Person> => {
+  const fetchID = async (id: string): Promise<Person> => {
     const data =
       await fetch(`https://api.themoviedb.org/3/search/person?api_key=${process.env.TEST_TOKEN}&query=${id}
   `).then((res) => res.json());
