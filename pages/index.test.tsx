@@ -4,6 +4,5 @@ import Home from "./index";
 
 it("renders correctly", () => {
   const result = render(<Home />);
-
   expect(result).toMatchSnapshot();
 });
