@@ -9,6 +9,7 @@ export default function Home() {
   const [personTwo, setpersonTwo] = useState<string>("");
   const [moreInfo, setMoreInfo] = useState<MoreInfo>();
 
+  // fetch film data from two IDs
   const handleSearch = async (): Promise<MoreInfo> => {
     const [IdOne, IdTwo] = await Promise.all([
       fetchID(personOne),
@@ -22,6 +23,7 @@ export default function Home() {
     return data;
   };
 
+  // fetch IDs of user inputs
   const fetchID = async (id: number): Promise<Person> => {
     const data =
       await fetch(`https://api.themoviedb.org/3/search/person?api_key=${process.env.TEST_TOKEN}&query=${id}
@@ -29,10 +31,12 @@ export default function Home() {
     return data.results[0].id;
   };
 
+  // set state for input one
   const idOne = (e: React.ChangeEvent<HTMLInputElement>) => {
     setpersonOne(e.target.value);
   };
 
+  // set state for input two
   const idTwo = (e: React.ChangeEvent<HTMLInputElement>) => {
     setpersonTwo(e.target.value);
   };
