@@ -6,7 +6,7 @@ import { Person, MoreInfo } from "../types/types";
 
 export default function Home() {
   const [personOne, setpersonOne] = useState<string>("Person One");
-  const [personTwo, setpersonTwo] = useState<string>("PErson Two");
+  const [personTwo, setpersonTwo] = useState<string>("Person Two");
   const [moreInfo, setMoreInfo] = useState<MoreInfo>();
 
   // fetch film data from two IDs
