@@ -1,6 +1,6 @@
 # 🍿Movies App
 
-This small application allows users to input two actor/actress' names, and view which films they both starred in.
+This small application allows users to input two actor/actress' names and view which films they both starred in.
 
 ### 📋Aims of App
 
