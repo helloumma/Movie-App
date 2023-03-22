@@ -31,6 +31,13 @@ export default function Home() {
     return data.results[0].id;
   };
 
+  // reminder: with react-query, you can create hooks for each one
+  /*
+  you need to import the hook for the first one to get the id and the do the setState/onchnage for both
+  and you need to store them in the state 
+  and then you call the second hook for the data within handleSearch
+   */
+
   // set state for input one
   const idOne = (e: React.ChangeEvent<HTMLInputElement>) => {
     setpersonOne(e.target.value);
