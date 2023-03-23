@@ -15,6 +15,8 @@ This small application allows users to input two actor/actress' names and view w
 - TypeScript
 - NextJS
 - Vitest
+- TailwindCSS
+- React-query
 
 ### 🔧How to Run the App
 
@@ -38,7 +40,5 @@ npx vitest --coverage
 
 ### 💭Future Improvements
 
-- Improve the responsive design
-- Program pagination to view a limited amount of results on each page
 - React-select/auto-complete on inputs
 - Error handling with Formik
