@@ -8,7 +8,7 @@ const Input = (props: {
   ErrorTwo: string | undefined;
 }) => {
   return (
-    <main className="input-section container m-auto p-8 text-center">
+    <main className="input-section container m-auto p-10 text-center">
       <section className="form-section  rounded bg-white p-8">
         <label htmlFor="actorActressOne">Actor/Actress One:</label>
         <input
