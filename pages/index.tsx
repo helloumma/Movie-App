@@ -77,8 +77,16 @@ export default function Home() {
           handleSearch={handleSearch}
           idOne={onChangeIdOne}
           idTwo={onChangeIdTwo}
-          ErrorOne={personOne ? "" : "error"}
-          ErrorTwo={personTwo ? "" : "error"}
+          ErrorOne={
+            personOne
+              ? "bg-white text-gray-700 border border-gray-500 rounded py-2 px-2 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              : "bg-white text-gray-700 border border-gray-500 rounded py-2 px-2 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+          }
+          ErrorTwo={
+            personTwo
+              ? "bg-white text-gray-700 border border-gray-500 rounded py-2 px-2 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              : "bgbg-white text-gray-700 border border-gray-500 rounded py-2 px-2 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+          }
         />
         <Result moreInfo={moreInfo} isLoading={isLoading} />
       </main>

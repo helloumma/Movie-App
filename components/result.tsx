@@ -5,60 +5,64 @@ import { MoreInfo } from "../types/types";
 const Result = (props: { moreInfo: Array<MoreInfo>; test: any } | any) => {
   const [showIndex, setShowIndex] = useState<number>(-1);
   return (
-    <main className="results-main">
-      {props.moreInfo?.results < 1 && <h2>No Films Found</h2>}
-      {props.isLoading ? (
-        "loading"
-      ) : (
-        <>
-          {props.moreInfo?.results?.map((film: MoreInfo, index: number) => (
-            <section key={film.id} className="results">
-              <div className="result-image">
-                <Image
-                  src={`http://image.tmdb.org/t/p/w500${film.poster_path}`}
-                  alt={film.title}
-                  width={150}
-                  height={230}
-                  className="film-img"
-                />
-              </div>
-              <div className="result-info">
-                <h3>
-                  {film.title} ({new Date(film.release_date).getFullYear()})
-                </h3>
-                <p className="stars-wrap">
-                  Rating:{Array(Math.round(film.popularity)).fill("⭐")} (
-                  {film.popularity.toFixed(2)})
-                </p>
-                {showIndex === index ? (
-                  <p>{film.overview}</p>
-                ) : (
-                  <p>{`${film.overview.substring(0, 250)}...`}</p>
-                )}
-                {film.overview.length > 250 && (
-                  <button
-                    className={showIndex === index ? "hide" : "show"}
-                    onClick={() =>
-                      showIndex === index
-                        ? setShowIndex(-1)
-                        : setShowIndex(index)
-                    }
-                  >
+    <div className="container m-auto p-8">
+      <div className="flex content-around flex-wrap">
+        {props.moreInfo?.results < 1 && <h2>No Films Found</h2>}
+        {props.isLoading ? (
+          "loading"
+        ) : (
+          <>
+            {props.moreInfo?.results?.map((film: MoreInfo, index: number) => (
+              <div className="w-1/3 p-2" key={film.id}>
+                <div className="text-gray-700 text-center bg-white p-2">
+                  <div className="result-image">
                     <Image
-                      priority
-                      src="/chevron.svg"
-                      height={32}
-                      width={32}
-                      alt="chevron"
+                      src={`http://image.tmdb.org/t/p/w500${film.poster_path}`}
+                      alt={film.title}
+                      width={150}
+                      height={230}
+                      className="shadow-md"
                     />
-                  </button>
-                )}
+                  </div>
+                  <div className="result-info">
+                    <h3>
+                      {film.title} ({new Date(film.release_date).getFullYear()})
+                    </h3>
+                    <p className="stars-wrap">
+                      Rating:{Array(Math.round(film.popularity)).fill("⭐")} (
+                      {film.popularity.toFixed(2)})
+                    </p>
+                    {showIndex === index ? (
+                      <p>{film.overview}</p>
+                    ) : (
+                      <p>{`${film.overview.substring(0, 250)}...`}</p>
+                    )}
+                    {film.overview.length > 250 && (
+                      <button
+                        className={showIndex === index ? "hide" : "show"}
+                        onClick={() =>
+                          showIndex === index
+                            ? setShowIndex(-1)
+                            : setShowIndex(index)
+                        }
+                      >
+                        <Image
+                          priority
+                          src="/chevron.svg"
+                          height={32}
+                          width={32}
+                          alt="chevron"
+                        />
+                      </button>
+                    )}
+                  </div>
+                </div>
               </div>
-            </section>
-          ))}
-        </>
-      )}
-    </main>
+            ))}
+          </>
+        )}
+      </div>
+    </div>
   );
 };
 
