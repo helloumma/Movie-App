@@ -6,27 +6,32 @@ import Result from "../components/result";
 import { MoreInfo, Person } from "@/types/types";
 
 export default function Home() {
-  const [personOne, setpersonOne] = useState<string>("Person One");
-  const [personTwo, setpersonTwo] = useState<string>("Person Two");
+  const [personOne, setPersonOne] = useState<string>("person one");
+  const [personTwo, setPersonTwo] = useState<string>("person two");
 
   // create custom hooks to fetch person IDs and movie data
-  const { data: idOne } = useQuery(["id", personOne], () => fetchID(personOne));
-  const { data: idTwo } = useQuery(["id", personTwo], () => fetchID(personTwo));
-
-  const { data: moreInfo, isLoading } = useQuery(
-    ["movies", idOne, idTwo],
-    () => fetchMovies(idOne, idTwo),
-    {
-      enabled: false, // do not fetch by default
-    }
+  const { data: idOne } = useQuery(["idOne", personOne], () =>
+    fetchID(personOne)
   );
+  const { data: idTwo } = useQuery(["idTwo", personTwo], () =>
+    fetchID(personTwo)
+  );
+
+  const {
+    data: moreInfo,
+    isLoading,
+    refetch: moreInfoRefetch,
+  } = useQuery(["movies", idOne, idTwo], () => fetchMovies(idOne, idTwo), {
+    enabled: false, // do not fetch by default
+  });
 
   // fetch IDs of user inputs
   const fetchID = async (id: string): Promise<Person> => {
     const data = await fetch(
       `https://api.themoviedb.org/3/search/person?api_key=${process.env.TEST_TOKEN}&query=${id}`
     ).then((res) => res.json());
-    return data.results[0];
+    console.log(data.results[0].id);
+    return data.results[0].id;
   };
 
   // fetch film data from two IDs
@@ -42,20 +47,17 @@ export default function Home() {
 
   // set state for input one
   const onChangeIdOne = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setpersonOne(e.target.value);
+    setPersonOne(e.target.value);
   };
 
   // set state for input two
   const onChangeIdTwo = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setpersonTwo(e.target.value);
+    setPersonTwo(e.target.value);
   };
 
   const handleSearch = () => {
-    // enable the query for fetching movie data
-    return moreInfo;
+    moreInfoRefetch();
   };
-
-  console.log(moreInfo);
 
   return (
     <>
