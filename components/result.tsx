@@ -14,8 +14,8 @@ const Result = (props: { moreInfo: Array<MoreInfo>; test: any } | any) => {
           <>
             {props.moreInfo?.results?.map((film: MoreInfo, index: number) => (
               <div className="w-1/3 p-2" key={film.id}>
-                <div className="text-gray-700 text-center rounded bg-white p-2 h-full">
-                  <div className="result-image">
+                <div className=" flex flex-wrap text-gray-700 text-center rounded bg-white p-2 h-full">
+                  <div className="result-image w-1/3">
                     <Image
                       src={`http://image.tmdb.org/t/p/w500${film.poster_path}`}
                       alt={film.title}
@@ -24,7 +24,7 @@ const Result = (props: { moreInfo: Array<MoreInfo>; test: any } | any) => {
                       className="shadow-md"
                     />
                   </div>
-                  <div className="result-info">
+                  <div className="result-info w-2/3 text-left">
                     <h3>
                       {film.title} ({new Date(film.release_date).getFullYear()})
                     </h3>

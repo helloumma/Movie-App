@@ -8,8 +8,8 @@ const Input = (props: {
   ErrorTwo: string | undefined;
 }) => {
   return (
-    <main className="input-section container m-auto p-8 text-center">
-      <section className="form-section rounded bg-white p-8">
+    <main className="input-section container m-auto p-8 ">
+      <section className="form-section  rounded bg-white p-2">
         <label htmlFor="actorActressOne">Actor/Actress One:</label>
         <input
           type="text"
