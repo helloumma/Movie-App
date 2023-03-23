@@ -13,9 +13,9 @@ const Result = (props: { moreInfo: Array<MoreInfo>; test: any } | any) => {
         ) : (
           <>
             {props.moreInfo?.results?.map((film: MoreInfo, index: number) => (
-              <div className="w-1/3 p-2" key={film.id}>
-                <div className=" flex flex-wrap text-gray-700 text-center rounded bg-white p-2 h-full">
-                  <div className="result-image w-1/3">
+              <div className="sm:w-full md:w-1/2 lg:w-1/3 p-2" key={film.id}>
+                <div className="flex flex-wrap text-gray-800 text-center rounded bg-white p-2 h-full">
+                  <div className="w-1/3">
                     <Image
                       src={`http://image.tmdb.org/t/p/w500${film.poster_path}`}
                       alt={film.title}
@@ -25,11 +25,11 @@ const Result = (props: { moreInfo: Array<MoreInfo>; test: any } | any) => {
                     />
                   </div>
                   <div className="result-info w-2/3 text-left">
-                    <h3>
+                    <h3 className="text-xl font-bold">
                       {film.title} ({new Date(film.release_date).getFullYear()})
                     </h3>
-                    <p className="break-all">
-                      Rating:{Array(Math.round(film.popularity)).fill("⭐")} (
+                    <p className="break-all mb-4">
+                      {Array(Math.round(film.popularity)).fill("⭐")} (
                       {film.popularity.toFixed(2)})
                     </p>
                     {showIndex === index ? (

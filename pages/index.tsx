@@ -69,7 +69,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1 className="page-title text-center">
+        <h1 className="text-5xl text-center">
           Name Two Actors/Actresses Who Starred in...
         </h1>
 
