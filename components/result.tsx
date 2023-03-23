@@ -24,7 +24,7 @@ const Result = (props: { moreInfo: Array<MoreInfo>; test: any } | any) => {
                       className="shadow-md"
                     />
                   </div>
-                  <div className="result-info w-2/3 text-left">
+                  <div className="w-2/3 text-left">
                     <h3 className="text-xl font-bold">
                       {film.title} ({new Date(film.release_date).getFullYear()})
                     </h3>
