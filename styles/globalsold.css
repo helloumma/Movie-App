@@ -1,0 +1,123 @@
+html,
+body {
+  background: #f5dada;
+  color: #232323;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+.results-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.results {
+  display: flex;
+  flex-wrap: wrap;
+  width: 45%;
+  background: #249f6de6;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 0.5rem 0.5rem black;
+  color: #fff;
+}
+
+.show,
+.hide {
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  margin-left: 90%;
+}
+
+.show {
+  transform: rotate(180deg);
+}
+
+.hide {
+  transform: rotate(0deg);
+}
+
+.film-img {
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+
+.submit-button {
+  border: none;
+  background: #232323;
+  padding: 10px;
+  border-radius: 2px;
+  color: #fff;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-top: 10px;
+  font-family: monospace;
+}
+
+input {
+  border: none;
+  background: #e8f0fe;
+  padding: 10px;
+  border-radius: 2px;
+  margin-right: 10px;
+  color: #313132;
+  font-family: monospace;
+  border: 1px solid;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+.stars-wrap {
+  word-break: break-all;
+}
+
+.result-image {
+  width: 30%;
+}
+
+.result-info {
+  width: 70%;
+}
+
+.page-title,
+.input-section {
+  display: flex;
+  justify-content: center;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  border-top: 1px solid #ef9a9a;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.form-section {
+  margin-top: 10px;
+}
+
+.error {
+  border: 1px solid #ff0000;
+}
+
+.input-section {
+  background: #ffffff;
+  margin: 30px 50px 20px 50px;
+  padding: 40px;
+  font-family: monospace;
+  border: 1px solid #000000;
+}
+
+label {
+  color: #1e1e1e;
+}
