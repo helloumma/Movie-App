@@ -11,7 +11,6 @@ This small application allows users to input two actor/actress' names and view w
 
 ### 👩‍💻Technical Details
 
-- React
 - TypeScript
 - NextJS
 - Vitest
