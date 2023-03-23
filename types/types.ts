@@ -8,6 +8,8 @@ export interface MoreInfo {
   popularity: number;
   poster_path: string;
   id: string;
+  personOne: number;
+  personTwo: number;
 }
 
 export interface Person {
