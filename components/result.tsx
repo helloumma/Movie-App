@@ -14,7 +14,7 @@ const Result = (props: { moreInfo: Array<MoreInfo>; test: any } | any) => {
           <>
             {props.moreInfo?.results?.map((film: MoreInfo, index: number) => (
               <div className="w-1/3 p-2" key={film.id}>
-                <div className="text-gray-700 text-center bg-white p-2">
+                <div className="text-gray-700 text-center rounded bg-white p-2 h-full">
                   <div className="result-image">
                     <Image
                       src={`http://image.tmdb.org/t/p/w500${film.poster_path}`}
@@ -28,7 +28,7 @@ const Result = (props: { moreInfo: Array<MoreInfo>; test: any } | any) => {
                     <h3>
                       {film.title} ({new Date(film.release_date).getFullYear()})
                     </h3>
-                    <p className="stars-wrap">
+                    <p className="break-all">
                       Rating:{Array(Math.round(film.popularity)).fill("⭐")} (
                       {film.popularity.toFixed(2)})
                     </p>
@@ -39,7 +39,9 @@ const Result = (props: { moreInfo: Array<MoreInfo>; test: any } | any) => {
                     )}
                     {film.overview.length > 250 && (
                       <button
-                        className={showIndex === index ? "hide" : "show"}
+                        className={
+                          showIndex === index ? "rotate-0" : "rotate-180"
+                        }
                         onClick={() =>
                           showIndex === index
                             ? setShowIndex(-1)

@@ -8,8 +8,8 @@ const Input = (props: {
   ErrorTwo: string | undefined;
 }) => {
   return (
-    <main className="input-section">
-      <section className="form-section">
+    <main className="input-section container m-auto p-8 text-center">
+      <section className="form-section rounded bg-white p-8">
         <label htmlFor="actorActressOne">Actor/Actress One:</label>
         <input
           type="text"
@@ -24,14 +24,14 @@ const Input = (props: {
           className={props.ErrorTwo}
           onChange={props.idTwo}
         />
+        <button
+          onClick={props.handleSearch}
+          type="submit"
+          className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
+        >
+          Find Film(s)
+        </button>
       </section>
-      <button
-        onClick={props.handleSearch}
-        type="submit"
-        className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
-      >
-        Find Film(s)
-      </button>
     </main>
   );
 };
