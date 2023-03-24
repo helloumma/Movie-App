@@ -77,16 +77,6 @@ export default function Home() {
           handleSearch={handleSearch}
           idOne={onChangeIdOne}
           idTwo={onChangeIdTwo}
-          ErrorOne={
-            personOne
-              ? "bg-white text-gray-700 border border-gray-500 rounded py-2 px-2 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mx-4"
-              : "bg-white text-gray-700 border border-gray-500 rounded py-2 px-2 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500  mx-4"
-          }
-          ErrorTwo={
-            personTwo
-              ? "bg-white text-gray-700 border border-gray-500 rounded py-2 px-2 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500  mx-4"
-              : "bgbg-white text-gray-700 border border-gray-500 rounded py-2 px-2 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500  mx-4"
-          }
         />
         <Result moreInfo={moreInfo} isLoading={isLoading} />
       </main>
