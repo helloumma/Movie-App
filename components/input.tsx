@@ -3,10 +3,8 @@ import { Formik } from "formik";
 
 const Input = (props: {
   handleSearch: MouseEventHandler<HTMLButtonElement> | any;
-  idOne: ChangeEventHandler<HTMLInputElement> | any;
+  idOne: ChangeEventHandler<HTMLInputElement>;
   idTwo: ChangeEventHandler<HTMLInputElement>;
-  ErrorOne: string | undefined;
-  ErrorTwo: string | undefined;
 }) => {
   return (
     <Formik
@@ -24,16 +22,7 @@ const Input = (props: {
       onSubmit={props.handleSearch}
     >
       {(formik) => {
-        const {
-          values,
-          handleChange,
-          handleSubmit,
-          errors,
-          touched,
-          handleBlur,
-          isValid,
-          dirty,
-        } = formik;
+        const { values, handleChange, errors, touched, handleBlur } = formik;
         return (
           <main className="container m-auto p-10 text-center">
             <section className="rounded bg-white p-8">
@@ -69,7 +58,7 @@ const Input = (props: {
                 }
                 onChange={(e) => {
                   handleChange(e);
-                  props.idTwo?.(e); // call props.idOne if it exists
+                  props.idTwo?.(e);
                 }}
                 onBlur={handleBlur}
                 value={values.actorActressTwo}
