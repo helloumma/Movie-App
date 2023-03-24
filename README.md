@@ -16,6 +16,7 @@ This small application allows users to input two actor/actress' names and view w
 - Vitest
 - TailwindCSS
 - React-query
+- Formik
 
 ### 🔧How to Run the App
 
