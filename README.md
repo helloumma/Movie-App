@@ -40,4 +40,3 @@ npx vitest --coverage
 ### 💭Future Improvements
 
 - React-select/auto-complete on inputs
-- Error handling with Formik
