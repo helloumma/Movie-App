@@ -25,10 +25,6 @@ export default function Home() {
     setPersonTwo(e.target.value);
   };
 
-  const handleSearch = () => {
-    moreInfoRefetch();
-  };
-
   return (
     <>
       <Head>
@@ -45,7 +41,7 @@ export default function Home() {
         </h1>
 
         <Input
-          handleSearch={handleSearch}
+          handleSearch={moreInfoRefetch}
           idOne={onChangeIdOne}
           idTwo={onChangeIdTwo}
         />
