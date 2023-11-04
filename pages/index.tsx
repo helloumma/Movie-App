@@ -14,7 +14,7 @@ export default function Home() {
     data: moreInfo,
     isLoading,
     refetch: moreInfoRefetch,
-  } = useMoviesQuery(idOne, idTwo);
+  } = useMoviesQuery(idOne as unknown as string, idTwo as unknown as string);
 
   const onChangeIdOne = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPersonOne(e.target.value);
