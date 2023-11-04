@@ -1,0 +1,154 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Component renders correctly 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <main
+        class="container m-auto p-10 text-center"
+      >
+        <section
+          class="rounded bg-green-700 text-white p-8"
+        >
+          <form
+            action="#"
+          >
+            <label
+              class="font-bold"
+              for="actorActressOne"
+            >
+              Actor/Actress One:
+            </label>
+            <input
+              class="bg-white border-white text-green-600 important focus:text-green-600 important border py-2 px-4 border-b-4 rounded py-2 px-2 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-white mx-4"
+              id="actorActressOne"
+              name="actorActressOne"
+              type="text"
+              value=""
+            />
+            <label
+              class="font-bold"
+              for="actorActressTwo"
+            >
+              Actor/Actress Two:
+            </label>
+            <input
+              class="bg-white border-white text-green-600 border py-2 px-4 border-b-4 rounded py-2 px-2 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-white mx-4"
+              id="actorActressTwo"
+              name="actorActressTwo"
+              type="text"
+              value=""
+            />
+            <button
+              class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
+              disabled=""
+              type="submit"
+            >
+              Find Film(s)
+            </button>
+          </form>
+        </section>
+      </main>
+    </div>
+  </body>,
+  "container": <div>
+    <main
+      class="container m-auto p-10 text-center"
+    >
+      <section
+        class="rounded bg-green-700 text-white p-8"
+      >
+        <form
+          action="#"
+        >
+          <label
+            class="font-bold"
+            for="actorActressOne"
+          >
+            Actor/Actress One:
+          </label>
+          <input
+            class="bg-white border-white text-green-600 important focus:text-green-600 important border py-2 px-4 border-b-4 rounded py-2 px-2 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-white mx-4"
+            id="actorActressOne"
+            name="actorActressOne"
+            type="text"
+            value=""
+          />
+          <label
+            class="font-bold"
+            for="actorActressTwo"
+          >
+            Actor/Actress Two:
+          </label>
+          <input
+            class="bg-white border-white text-green-600 border py-2 px-4 border-b-4 rounded py-2 px-2 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-white mx-4"
+            id="actorActressTwo"
+            name="actorActressTwo"
+            type="text"
+            value=""
+          />
+          <button
+            class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
+            disabled=""
+            type="submit"
+          >
+            Find Film(s)
+          </button>
+        </form>
+      </section>
+    </main>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
