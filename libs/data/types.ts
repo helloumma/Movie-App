@@ -8,7 +8,7 @@ export interface data {
 }
 
 export interface MoreInfo {
-  results: Array<data> & number;
+  results: (Array<data> & number) | Array<data>;
   personOne: number;
   personTwo: number;
 }

@@ -1,5 +1,6 @@
 import { useQuery } from "react-query";
-import { fetchID, fetchMovies } from "@/pages/api/film-data";
+
+import { fetchID, fetchMovies } from "../../pages/api/film-data";
 
 export const useIdOneQuery = (personOne: string) => {
   return useQuery(["idOne", personOne], () => fetchID(personOne));
