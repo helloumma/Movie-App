@@ -13,7 +13,7 @@ it("Expect form tag to be found", () => {
   render(
     <Input handleSearch={() => null} idOne={() => null} idTwo={() => null} />
   );
-  const formElement = screen.getByRole("form");
+  const formElement = screen.getAllByRole("form");
   expect(formElement).toBeInTheDocument();
 });
 
@@ -21,8 +21,8 @@ it("Find label tags", () => {
   render(
     <Input handleSearch={() => null} idOne={() => null} idTwo={() => null} />
   );
-  const labelElements = screen.getAllByRole("textbox");
-  expect(labelElements.length).toBe(2);
+  const labelElements = screen.getAllByRole("label");
+  expect(labelElements).toHaveLength(2);
 });
 
 it("Render label tags correctly", () => {
@@ -40,13 +40,13 @@ it("Find field tags", () => {
     <Input handleSearch={() => null} idOne={() => null} idTwo={() => null} />
   );
   const fieldElements = screen.getAllByRole("textbox");
-  expect(fieldElements.length).toBe(2);
+  expect(fieldElements).toHaveLength(2);
 });
 
 it("Find button and render text correctly", () => {
   render(
     <Input handleSearch={() => null} idOne={() => null} idTwo={() => null} />
   );
-  const buttonElement = screen.getByRole("button", { name: "Find Film(s)" });
+  const buttonElement = screen.getAllByRole("button", { name: "Find Film(s)" });
   expect(buttonElement).toBeInTheDocument();
 });
