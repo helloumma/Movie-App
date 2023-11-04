@@ -4,6 +4,7 @@ import { useQuery } from "react-query";
 import Input from "../components/input";
 import Result from "../components/result";
 import { MoreInfo, Person } from "@/types/types";
+import { fetchID, fetchMovies } from "./api/film-data";
 
 export default function Home() {
   const [personOne, setPersonOne] = useState<string>("person one");
@@ -26,7 +27,7 @@ export default function Home() {
   });
 
   // fetch IDs of user inputs
-  const fetchID = async (id: string): Promise<Person> => {
+  /*const fetchID = async (id: string): Promise<Person> => {
     const data = await fetch(
       `https://api.themoviedb.org/3/search/person?api_key=${process.env.TEST_TOKEN}&query=${id}`
     ).then((res) => res.json());
@@ -42,7 +43,7 @@ export default function Home() {
       `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TEST_TOKEN}&language=en-US&sort_by=primary_release_date.desc&page=1&with_people=${idOne},${idTwo}`
     ).then((res) => res.json());
     return data;
-  };
+  };*/
 
   // set state for input one
   const onChangeIdOne = (e: React.ChangeEvent<HTMLInputElement>) => {
