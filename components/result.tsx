@@ -1,8 +1,8 @@
-import { MoreInfo, data } from "@/libs/data";
+import { MoreInfo } from "@/libs/data";
 import Image from "next/image";
 import { useState } from "react";
 
-const Result = (props: { isLoading: string; moreInfo: MoreInfo }) => {
+const Result = (props: { isLoading: boolean; moreInfo: MoreInfo }) => {
   const [showIndex, setShowIndex] = useState<number>(-1);
 
   return (

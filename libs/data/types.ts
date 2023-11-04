@@ -8,11 +8,11 @@ export interface data {
 }
 
 export interface MoreInfo {
-  results: data[] & number;
+  results: Array<data> & number;
   personOne: number;
   personTwo: number;
 }
 
 export interface Person {
-  id: number;
+  id: string;
 }

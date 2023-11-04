@@ -44,7 +44,8 @@ export default function Home() {
           idOne={onChangeIdOne}
           idTwo={onChangeIdTwo}
         />
-        <Result moreInfo={moreInfo} isLoading={isLoading} />
+        {/* reminder: need to check moreInfo isn't undefined */}
+        {moreInfo && <Result moreInfo={moreInfo} isLoading={isLoading} />}
       </main>
     </>
   );

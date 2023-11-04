@@ -1,5 +1,5 @@
-import { ChangeEventHandler, MouseEventHandler } from "react";
-import { Formik } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import { ChangeEvent, ChangeEventHandler, MouseEventHandler } from "react";
 
 const Input = (props: {
   handleSearch: MouseEventHandler<HTMLButtonElement> | any;
@@ -21,13 +21,12 @@ const Input = (props: {
       }}
       onSubmit={props.handleSearch}
     >
-      {(formik) => {
-        const { values, handleChange, errors, touched, handleBlur } = formik;
-        return (
-          <main className="container m-auto p-10 text-center">
-            <section className="rounded bg-white p-8">
+      {({ values, handleChange, errors, touched, handleBlur }) => (
+        <main className="container m-auto p-10 text-center">
+          <section className="rounded bg-white p-8">
+            <Form>
               <label htmlFor="actorActressOne">Actor/Actress One:</label>
-              <input
+              <Field
                 type="text"
                 id="actorActressOne"
                 name="actorActressOne"
@@ -36,18 +35,20 @@ const Input = (props: {
                     ? "border border-red-500 bg-white text-gray-700 border rounded py-2 px-2 mb-3 leading-tight focus:outline-none focus:bg-white  mx-4"
                     : "bg-white text-gray-700 border border-gray-500 rounded py-2 px-2 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mx-4"
                 }
-                onChange={(e) => {
+                onChange={(e: ChangeEvent<HTMLInputElement>) => {
                   handleChange(e);
-                  props.idOne?.(e); // call props.idOne if it exists
+                  props.idOne?.(e);
                 }}
                 onBlur={handleBlur}
                 value={values.actorActressOne}
               />
-              {errors.actorActressOne && (
-                <p className="text-red-500">{errors.actorActressOne}</p>
-              )}
+              <ErrorMessage
+                name="actorActressOne"
+                component="div"
+                className="text-red-500"
+              />
               <label htmlFor="actorActressTwo">Actor/Actress Two:</label>
-              <input
+              <Field
                 type="text"
                 id="actorActressTwo"
                 name="actorActressTwo"
@@ -56,16 +57,18 @@ const Input = (props: {
                     ? "border border-red-500 bg-white text-gray-700  border rounded py-2 px-2 mb-3 leading-tight focus:outline-none focus:bg-white  mx-4"
                     : "bg-white text-gray-700 border border-gray-500 rounded py-2 px-2 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mx-4"
                 }
-                onChange={(e) => {
+                onChange={(e: ChangeEvent<HTMLInputElement>) => {
                   handleChange(e);
                   props.idTwo?.(e);
                 }}
                 onBlur={handleBlur}
                 value={values.actorActressTwo}
               />
-              {errors.actorActressTwo && touched.actorActressTwo && (
-                <p className="text-red-500">{errors.actorActressTwo}</p>
-              )}
+              <ErrorMessage
+                name="actorActressTwo"
+                component="div"
+                className="text-red-500"
+              />
               <button
                 onClick={props.handleSearch}
                 type="submit"
@@ -73,11 +76,12 @@ const Input = (props: {
               >
                 Find Film(s)
               </button>
-            </section>
-          </main>
-        );
-      }}
+            </Form>
+          </section>
+        </main>
+      )}
     </Formik>
   );
 };
+
 export default Input;
