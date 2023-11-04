@@ -16,23 +16,24 @@ const Result = (props: { isLoading: boolean; moreInfo: MoreInfo }) => {
             {props.moreInfo?.results?.map((film, index) => (
               <div className="sm:w-full md:w-1/2 lg:w-1/3 p-2" key={film.id}>
                 <div className="flex flex-wrap text-gray-800 text-center rounded bg-white p-2 h-full">
-                  <div className="w-1/3">
+                  <div className="w-full">
                     <Image
                       src={`http://image.tmdb.org/t/p/w500${film.poster_path}`}
                       alt={film.title}
-                      width={150}
-                      height={230}
+                      width={400}
+                      height={500}
                       className="shadow-md"
                     />
                   </div>
-                  <div className="w-2/3 text-left">
-                    <h3 className="text-xl font-bold">
+                  <div className="text-left">
+                    <h3 className="text-4xl font-bold">
                       {film.title} ({new Date(film.release_date).getFullYear()})
                     </h3>
-                    <p className="break-all mb-4">
+                    <p className="break-all mb-4 text-2xl ">
                       {Array(Math.round(film.popularity)).fill("⭐")} (
                       {film.popularity.toFixed(2)})
                     </p>
+
                     {showIndex === index ? (
                       <p>{film.overview}</p>
                     ) : (
