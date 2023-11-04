@@ -10,7 +10,10 @@ const Input = (props: {
     <Formik
       initialValues={{ actorActressOne: "", actorActressTwo: "" }}
       validate={(values) => {
-        const errors: any = {};
+        const errors: { actorActressOne: string; actorActressTwo: string } = {
+          actorActressOne: "",
+          actorActressTwo: "",
+        };
         if (!values.actorActressOne) {
           errors.actorActressOne = "Actor/Actress One is required";
         }
