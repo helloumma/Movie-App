@@ -13,7 +13,7 @@ const Result = (props: { isLoading: string; moreInfo: MoreInfo }) => {
           "loading"
         ) : (
           <>
-            {props.moreInfo?.results?.map((film: data, index: number) => (
+            {props.moreInfo?.results?.map((film, index) => (
               <div className="sm:w-full md:w-1/2 lg:w-1/3 p-2" key={film.id}>
                 <div className="flex flex-wrap text-gray-800 text-center rounded bg-white p-2 h-full">
                   <div className="w-1/3">
