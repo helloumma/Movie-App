@@ -26,17 +26,19 @@ const Input = (props: {
     >
       {({ values, handleChange, errors, touched, handleBlur }) => (
         <main className="container m-auto p-10 text-center">
-          <section className="rounded bg-white p-8">
+          <section className="rounded bg-green-700 text-white p-8">
             <Form>
-              <label htmlFor="actorActressOne">Actor/Actress One:</label>
+              <label htmlFor="actorActressOne" className="font-bold">
+                Actor/Actress One:
+              </label>
               <Field
                 type="text"
                 id="actorActressOne"
                 name="actorActressOne"
                 className={
                   errors.actorActressOne && touched.actorActressOne
-                    ? "border border-red-500 bg-white text-gray-700 border rounded py-2 px-2 mb-3 leading-tight focus:outline-none focus:bg-white  mx-4"
-                    : "bg-white text-gray-700 border border-gray-500 rounded py-2 px-2 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mx-4"
+                    ? "border border-red-500 bg-white text-red-600 border rounded py-2 px-2 mb-3 leading-tight focus:outline-none focus:bg-white  mx-4"
+                    : "bg-white border-white text-green-600 important focus:text-green-600 important border py-2 px-4 border-b-4 rounded py-2 px-2 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-white mx-4"
                 }
                 onChange={(e: ChangeEvent<HTMLInputElement>) => {
                   handleChange(e);
@@ -50,7 +52,9 @@ const Input = (props: {
                 component="div"
                 className="text-red-500"
               />
-              <label htmlFor="actorActressTwo">Actor/Actress Two:</label>
+              <label htmlFor="actorActressTwo" className="font-bold">
+                Actor/Actress Two:
+              </label>
               <Field
                 type="text"
                 id="actorActressTwo"
@@ -58,7 +62,7 @@ const Input = (props: {
                 className={
                   errors.actorActressTwo && touched.actorActressTwo
                     ? "border border-red-500 bg-white text-gray-700  border rounded py-2 px-2 mb-3 leading-tight focus:outline-none focus:bg-white  mx-4"
-                    : "bg-white text-gray-700 border border-gray-500 rounded py-2 px-2 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mx-4"
+                    : "bg-white border-white text-green-600 border py-2 px-4 border-b-4 rounded py-2 px-2 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-white mx-4"
                 }
                 onChange={(e: ChangeEvent<HTMLInputElement>) => {
                   handleChange(e);

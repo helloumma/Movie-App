@@ -41,7 +41,6 @@ npx vitest --coverage
 ### 💭Future Improvements
 
 - Auto-complete on inputs
-- Unit tests
 - Minor CSS fixes
 - Update NextJS and switch to app directory
 - Potentially look at React Actions + NextJS Server Actions

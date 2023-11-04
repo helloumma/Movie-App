@@ -35,7 +35,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1 className="text-5xl text-center">
+        <h1 className="text-4xl font-mono  mt-8 text-cyan-600 text-center">
           Name Two Actors/Actresses Who Starred in...
         </h1>
 
