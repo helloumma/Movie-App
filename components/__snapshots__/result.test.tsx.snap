@@ -5,15 +5,23 @@ exports[`renders correctly 1`] = `
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <main
-        class="results-main"
-      />
+      <div
+        class="container m-auto p-8"
+      >
+        <div
+          class="flex content-around flex-wrap"
+        />
+      </div>
     </div>
   </body>,
   "container": <div>
-    <main
-      class="results-main"
-    />
+    <div
+      class="container m-auto p-8"
+    >
+      <div
+        class="flex content-around flex-wrap"
+      />
+    </div>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

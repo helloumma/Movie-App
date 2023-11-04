@@ -40,4 +40,6 @@ npx vitest --coverage
 
 ### 💭Future Improvements
 
-- React-select/auto-complete on inputs
+- Auto-complete on inputs
+- Update NextJS and switch to app directory
+- React Actions + NextJS Server Actions (maybe)
