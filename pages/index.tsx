@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Head from "next/head";
-import Input from "../components/input";
-import Result from "../components/result";
+import { Input, Result } from "../components";
 import { useIdOneQuery, useIdTwoQuery, useMoviesQuery } from "../libs/data";
 
 export default function Home() {

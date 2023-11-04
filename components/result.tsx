@@ -1,9 +1,10 @@
+import { MoreInfo, data } from "@/libs/data";
 import Image from "next/image";
 import { useState } from "react";
-import { MoreInfo } from "../types/types";
 
-const Result = (props: { moreInfo: Array<MoreInfo>; test: any } | any) => {
+const Result = (props: { isLoading: string; moreInfo: MoreInfo }) => {
   const [showIndex, setShowIndex] = useState<number>(-1);
+
   return (
     <div className="container m-auto p-8">
       <div className="flex content-around flex-wrap">
@@ -12,7 +13,7 @@ const Result = (props: { moreInfo: Array<MoreInfo>; test: any } | any) => {
           "loading"
         ) : (
           <>
-            {props.moreInfo?.results?.map((film: MoreInfo, index: number) => (
+            {props.moreInfo?.results?.map((film: data, index: number) => (
               <div className="sm:w-full md:w-1/2 lg:w-1/3 p-2" key={film.id}>
                 <div className="flex flex-wrap text-gray-800 text-center rounded bg-white p-2 h-full">
                   <div className="w-1/3">

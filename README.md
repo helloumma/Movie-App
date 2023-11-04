@@ -40,4 +40,10 @@ npx vitest --coverage
 
 ### 💭Future Improvements
 
-- React-select/auto-complete on inputs
+- Auto-complete on inputs
+- Error handling (remove formik + yup)
+- Unit tests
+- Type safety checks
+- Disable 'Find films' button when there are no inputs (?)
+- Minor CSS fixes
+- Update NextJS and switch to app directory
